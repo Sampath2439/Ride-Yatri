@@ -17,5 +17,8 @@
   "workspaces": [
     "client",
     "api"
-  ]
+  ],
+  "dependencies": {
+    "@swc/core": "^1.13.3"
+  }
 }

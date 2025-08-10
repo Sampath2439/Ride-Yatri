@@ -87,3 +87,4 @@ vercel --prod
 - **Responsive**: Perfect on desktop and mobile
 
 Both projects are standalone and deployable independently while maintaining the exact same beautiful UI/UX experience.
+Made by Sampath

@@ -134,12 +134,12 @@ export default function Rides() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto p-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="max-w-7xl mx-auto p-4 md:p-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           {/* Left Column - Booking Form */}
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {/* Location Inputs */}
-            <div className="bg-white rounded-xl shadow-lg p-6">
+            <div className="bg-white rounded-xl shadow-lg p-4 md:p-6">
               <h2 className="text-xl font-bold text-yatri-dark-500 mb-4">
                 Where to?
               </h2>
@@ -184,12 +184,12 @@ export default function Rides() {
             </div>
 
             {/* Vehicle Selection */}
-            <div className="bg-white rounded-xl shadow-lg p-6">
+            <div className="bg-white rounded-xl shadow-lg p-4 md:p-6">
               <h2 className="text-xl font-bold text-yatri-dark-500 mb-4">
                 Choose Vehicle
               </h2>
 
-              <div className="grid grid-cols-1 gap-3">
+              <div className="grid grid-cols-1 gap-2 md:gap-3">
                 {vehicleTypes.map((vehicle) => {
                   const Icon = vehicle.icon;
                   return (
@@ -267,9 +267,9 @@ export default function Rides() {
           </div>
 
           {/* Right Column - Map and Driver Details */}
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {/* Map Placeholder */}
-            <div className="bg-white rounded-xl shadow-lg p-6">
+            <div className="bg-white rounded-xl shadow-lg p-4 md:p-6">
               <h2 className="text-xl font-bold text-yatri-dark-500 mb-4">
                 Route Preview
               </h2>
@@ -285,7 +285,7 @@ export default function Rides() {
             </div>
 
             {/* Available Drivers */}
-            <div className="bg-white rounded-xl shadow-lg p-6">
+            <div className="bg-white rounded-xl shadow-lg p-4 md:p-6">
               <h2 className="text-xl font-bold text-yatri-dark-500 mb-4">
                 Available Drivers
               </h2>

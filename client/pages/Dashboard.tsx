@@ -118,10 +118,10 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-gray-50 flex flex-col md:flex-row">
       {/* Left Navigation - 20% */}
-      <div className="w-1/5 bg-white shadow-lg">
-        <div className="p-6">
+      <div className="w-full md:w-1/5 bg-white shadow-lg md:min-h-screen">
+        <div className="p-4 md:p-6">
           {/* User Profile */}
           <div className="text-center mb-8">
             <div className="w-16 h-16 bg-gradient-to-br from-yatri-yellow-500 to-yatri-teal-500 rounded-full mx-auto mb-3 flex items-center justify-center">
@@ -159,7 +159,7 @@ export default function Dashboard() {
         </div>
 
         {/* Back to Home Button */}
-        <div className="absolute bottom-6 left-6 right-6">
+  <div className="md:absolute md:bottom-6 md:left-6 md:right-6 mt-6 md:mt-0">
           <Link to="/">
             <button className="w-full flex items-center space-x-3 px-4 py-3 text-red-500 hover:bg-red-50 rounded-lg transition-colors duration-200">
               <LogOut className="w-5 h-5" />
@@ -170,7 +170,7 @@ export default function Dashboard() {
       </div>
 
       {/* Main Content Area - 60% */}
-      <div className="flex-1 p-8">
+      <div className="w-full md:flex-1 p-4 md:p-8">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="mb-8">
@@ -183,7 +183,7 @@ export default function Dashboard() {
           </div>
 
           {/* Summary Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {summaryCards.map((card, index) => (
               <div
                 key={card.id}
@@ -214,7 +214,7 @@ export default function Dashboard() {
             <h2 className="text-xl font-bold text-yatri-dark-500 mb-4">
               Quick Actions
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
               <Link to="/rides">
                 <button className="w-full bg-yatri-yellow-500 hover:bg-yatri-yellow-600 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">
                   Book a Ride
@@ -233,8 +233,8 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Right Stats Panel - 20% */}
-      <div className="w-1/5 bg-white shadow-lg p-6">
+  {/* Right Stats Panel - 20% */}
+  <div className="w-full md:w-1/5 bg-white shadow-lg p-4 md:p-6 md:min-h-screen">
         <h2 className="text-lg font-bold text-yatri-dark-500 mb-6">
           Quick Stats
         </h2>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import GoogleSignIn from "../components/GoogleSignIn";
 
 export default function Index() {
   const [isVisible, setIsVisible] = useState(false);
@@ -102,7 +103,7 @@ export default function Index() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-6">
+  <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 md:px-6">
         {/* Animated logo */}
         <div
           className={`mb-8 transform transition-all duration-1000 ${
@@ -151,7 +152,7 @@ export default function Index() {
           }`}
           style={{ animationDelay: "0.6s" }}
         >
-          <h1 className="text-6xl md:text-7xl font-bold text-white text-center tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-bold text-white text-center tracking-tight">
             Yatri
           </h1>
         </div>
@@ -163,7 +164,7 @@ export default function Index() {
           }`}
           style={{ animationDelay: "0.9s" }}
         >
-          <p className="text-xl md:text-2xl text-white/90 text-center font-medium">
+          <p className="text-lg md:text-xl text-white/90 text-center font-medium">
             Your Ride, Your Way.
           </p>
         </div>
