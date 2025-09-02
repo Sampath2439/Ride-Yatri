@@ -15,6 +15,7 @@ import {
   Phone,
   Shield,
 } from "lucide-react";
+import { MapPreview } from "@/components/MapPreview";
 
 export default function Rides() {
   const [source, setSource] = useState("");
@@ -273,14 +274,29 @@ export default function Rides() {
               <h2 className="text-xl font-bold text-yatri-dark-500 mb-4">
                 Route Preview
               </h2>
-              <div className="w-full h-64 bg-gradient-to-br from-yatri-teal-50 to-yatri-blue-50 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-2" />
-                  <p className="text-gray-500">Interactive Google Maps</p>
-                  <p className="text-sm text-gray-400">
-                    Dynamic routing visualization
-                  </p>
-                </div>
+              <div className="w-full h-[400px] rounded-lg overflow-hidden border-2 border-gray-200">
+                {source && destination ? (
+                  <div className="w-full h-full relative">
+                    <div className="w-full h-1/2 relative">
+                      {/* Source Location Preview */}
+                      <MapPreview location={source} type="source" />
+                    </div>
+                    <div className="w-full h-1/2 relative">
+                      {/* Destination Location Preview */}
+                      <MapPreview location={destination} type="destination" />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-yatri-teal-50 to-yatri-blue-50 flex items-center justify-center">
+                    <div className="text-center">
+                      <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-2" />
+                      <p className="text-gray-500">Enter locations to see route</p>
+                      <p className="text-sm text-gray-400">
+                        Source and destination required
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 

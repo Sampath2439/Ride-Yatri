@@ -14,7 +14,8 @@ import History from "./pages/History";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+function App() {
+  return (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
@@ -31,6 +32,15 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
-);
+  );
+}
 
-createRoot(document.getElementById("root")!).render(<App />);
+// Make sure the DOM is loaded before mounting
+document.addEventListener('DOMContentLoaded', () => {
+  const root = document.getElementById('root');
+  if (root) {
+    createRoot(root).render(<App />);
+  }
+});
+
+export default App;
