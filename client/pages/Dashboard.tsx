@@ -118,12 +118,12 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
-      {/* Left Navigation - 20% */}
-      <div className="w-1/5 bg-white shadow-lg">
-        <div className="p-6">
+    <div className="min-h-screen bg-gray-50 flex flex-col lg:flex-row">
+      {/* Left Navigation - Responsive */}
+      <div className="w-full lg:w-64 bg-white shadow-lg">
+        <div className="p-4 lg:p-6">
           {/* User Profile */}
-          <div className="text-center mb-8">
+          <div className="text-center mb-6 lg:mb-8">
             <div className="w-16 h-16 bg-gradient-to-br from-yatri-yellow-500 to-yatri-teal-500 rounded-full mx-auto mb-3 flex items-center justify-center">
               <User className="w-8 h-8 text-white" />
             </div>
@@ -169,12 +169,12 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Main Content Area - 60% */}
-      <div className="flex-1 p-8">
+      {/* Main Content Area - Responsive */}
+      <div className="flex-1 p-4 lg:p-8">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold text-yatri-dark-500 mb-2">
+          <div className="mb-6 lg:mb-8">
+            <h1 className="text-2xl lg:text-3xl font-bold text-yatri-dark-500 mb-2">
               Welcome back, John!
             </h1>
             <p className="text-gray-600">
@@ -183,7 +183,7 @@ export default function Dashboard() {
           </div>
 
           {/* Summary Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
             {summaryCards.map((card, index) => (
               <div
                 key={card.id}
@@ -210,23 +210,23 @@ export default function Dashboard() {
           </div>
 
           {/* Quick Actions */}
-          <div className="mt-8">
-            <h2 className="text-xl font-bold text-yatri-dark-500 mb-4">
+          <div className="mt-6 lg:mt-8">
+            <h2 className="text-lg lg:text-xl font-bold text-yatri-dark-500 mb-4">
               Quick Actions
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Link to="/rides">
-                <button className="w-full bg-yatri-yellow-500 hover:bg-yatri-yellow-600 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
+              <Link to="/rides" className="w-full">
+                <button className="w-full bg-yatri-yellow-500 hover:bg-yatri-yellow-600 text-white font-medium lg:font-semibold py-3 lg:py-4 px-4 lg:px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg text-sm lg:text-base">
                   Book a Ride
                 </button>
               </Link>
-              <Link to="/support">
-                <button className="w-full bg-yatri-teal-500 hover:bg-yatri-teal-600 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">
+              <Link to="/support" className="w-full">
+                <button className="w-full bg-yatri-teal-500 hover:bg-yatri-teal-600 text-white font-medium lg:font-semibold py-3 lg:py-4 px-4 lg:px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg text-sm lg:text-base">
                   Get Support
                 </button>
               </Link>
-              <Link to="/history">
-                <button className="w-full bg-white border-2 border-yatri-dark-500 text-yatri-dark-500 hover:bg-yatri-dark-500 hover:text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-200">
+              <Link to="/history" className="w-full sm:col-span-2 lg:col-span-1">
+                <button className="w-full bg-white border-2 border-yatri-dark-500 text-yatri-dark-500 hover:bg-yatri-dark-500 hover:text-white font-medium lg:font-semibold py-3 lg:py-4 px-4 lg:px-6 rounded-lg transition-colors duration-200 text-sm lg:text-base">
                   View History
                 </button>
               </Link>
@@ -235,64 +235,51 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Right Stats Panel - 20% */}
-      <div className="w-1/5 bg-white shadow-lg p-6">
-        <h2 className="text-lg font-bold text-yatri-dark-500 mb-6">
+      {/* Right Stats Panel - Responsive */}
+      <div className="w-full lg:w-64 bg-white shadow-lg p-4 lg:p-6 mt-4 lg:mt-0">
+        <h2 className="text-lg font-bold text-yatri-dark-500 mb-4 lg:mb-6">
           Quick Stats
         </h2>
 
-        <div className="space-y-6">
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-1 lg:gap-6">
           <div className="text-center p-4 bg-yatri-yellow-50 rounded-lg">
-            <div className="text-2xl font-bold text-yatri-yellow-600">47</div>
+            <div className="text-xl lg:text-2xl font-bold text-yatri-yellow-600">47</div>
             <div className="text-sm text-yatri-dark-500">Total Rides</div>
           </div>
 
           <div className="text-center p-4 bg-yatri-teal-50 rounded-lg">
-            <div className="text-2xl font-bold text-yatri-teal-600">₹2,340</div>
+            <div className="text-xl lg:text-2xl font-bold text-yatri-teal-600">₹2,340</div>
             <div className="text-sm text-yatri-dark-500">This Month</div>
           </div>
 
           <div className="text-center p-4 bg-yatri-blue-50 rounded-lg">
-            <div className="text-2xl font-bold text-yatri-blue-600">4.8★</div>
+            <div className="text-xl lg:text-2xl font-bold text-yatri-blue-600">4.8★</div>
             <div className="text-sm text-yatri-dark-500">Avg Rating</div>
           </div>
 
           <div className="text-center p-4 bg-green-50 rounded-lg">
-            <div className="text-2xl font-bold text-green-600">₹234</div>
+            <div className="text-xl lg:text-2xl font-bold text-green-600">₹234</div>
             <div className="text-sm text-yatri-dark-500">Saved</div>
           </div>
         </div>
 
         {/* Recent Activity */}
-        <div className="mt-8">
-          <h3 className="font-semibold text-yatri-dark-500 mb-4">
+        <div className="mt-6 lg:mt-8">
+          <h3 className="font-semibold text-yatri-dark-500 mb-3 lg:mb-4">
             Recent Activity
           </h3>
-          <div className="space-y-3">
-            <div className="text-sm p-3 bg-gray-50 rounded">
+          <div className="grid grid-cols-1 gap-3">
+            <div className="text-sm p-3 bg-gray-50 rounded hover:bg-gray-100 transition-colors">
               <div className="font-medium">Ride to Airport</div>
               <div className="text-gray-500">2 hours ago</div>
             </div>
-            <div className="text-sm p-3 bg-gray-50 rounded">
+            <div className="text-sm p-3 bg-gray-50 rounded hover:bg-gray-100 transition-colors">
               <div className="font-medium">Mall Trip</div>
               <div className="text-gray-500">Yesterday</div>
             </div>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </div>
   );
 }
