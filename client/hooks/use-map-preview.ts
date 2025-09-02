@@ -76,14 +76,14 @@ export function useMapPreview(location: string) {
           throw new Error('Failed to fetch map image');
         }
 
-        const blob = await mapResponse.blob();
+        const mapBlob = await mapResponse.blob();
         if (!mounted) return;
 
         if (objectUrl) {
           URL.revokeObjectURL(objectUrl);
         }
         
-        objectUrl = URL.createObjectURL(blob);
+        objectUrl = URL.createObjectURL(mapBlob);
         setImageUrl(objectUrl);
       } catch (err) {
         console.error('Map preview error:', err);
